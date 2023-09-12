@@ -1,0 +1,27 @@
+<!-- <h1 style="text-align: center; background-color: bisque; " class="mt-5  mb-3 text-primary"> ToDo APP</h1> -->
+<div class="container">
+<div class="row justify-content-md-center">
+
+    <div class="col col-lg-4">
+      
+<h1 style="text-align: center; background-color: rgb(239, 235, 230);" class="mt-5  mb-3 text-primary"> ToDo APP</h1>
+ 
+<!-- form section -->
+  <app-todo-form [todoList]="todos" (newItemEvent)="recievedFromChild($event)"></app-todo-form> 
+
+
+    <table class="table table-striped text-center  " >
+           
+       <tbody >
+        <tr class="row " *ngFor="let todo of todos; let i = index;">
+    <!-- list section -->
+
+<app-todo-list [addedTodo]="todo" [todoIndex]="i" [todoList]="todos" (removeEvent)="removedFromchild($event)"></app-todo-list>
+
+     </tr>
+        
+            </tbody> 
+          </table>
+    </div>
+</div>
+</div>
